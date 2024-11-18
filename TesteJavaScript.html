@@ -1,0 +1,73 @@
+<form id="cadastroForm">
+  <input type="text" id="nome" placeholder="Nome" required>
+  <input type="email" id="email" placeholder="Email" required>
+  <button type="submit">Cadastrar</button>
+</form>
+
+<table id="tabela" border="2px">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Email</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Linhas da tabela serão inseridas aqui -->
+  </tbody>
+</table>
+
+<script>
+  // Função para salvar no localStorage e atualizar a tabela
+  function atualizarTabela() {
+    const dados = JSON.parse(localStorage.getItem('cadastros')) || [];
+    const tbody = document.querySelector('#tabela tbody');
+    tbody.innerHTML = '';
+    dados.forEach((item, index) => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `<table>
+        <td>${item.nome}</td>
+        <td>${item.email}</td>
+        <td>
+          <button onclick="editarCadastro(${index})">Editar</button>
+          <button onclick="excluirCadastro(${index})">Excluir</button>
+        </td></table>
+      `;
+      tbody.appendChild(tr);
+    });
+  }
+
+  // Função para editar
+  function editarCadastro(index) {
+    const dados = JSON.parse(localStorage.getItem('cadastros')) || [];
+    const item = dados[index];
+    document.getElementById('nome').value = item.nome;
+    document.getElementById('email').value = item.email;
+    dados.splice(index, 1);
+    localStorage.setItem('cadastros', JSON.stringify(dados));
+    atualizarTabela();
+  }
+
+  // Função para excluir
+  function excluirCadastro(index) {
+    const dados = JSON.parse(localStorage.getItem('cadastros')) || [];
+    dados.splice(index, 1);
+    localStorage.setItem('cadastros', JSON.stringify(dados));
+    atualizarTabela();
+  }
+
+  // Enviar o formulário
+  document.getElementById('cadastroForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const nome = document.getElementById('nome').value;
+    const email = document.getElementById('email').value;
+    const dados = JSON.parse(localStorage.getItem('cadastros')) || [];
+    dados.push({ nome, email });
+    localStorage.setItem('cadastros', JSON.stringify(dados));
+    atualizarTabela();
+    event.target.reset();
+  });
+
+  // Inicializa a tabela quando a página carrega
+  window.onload = atualizarTabela;
+</script>
