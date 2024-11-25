@@ -21,15 +21,15 @@ CREATE TABLE Professor(
   Email TEXT NOT NULL,
   Telefone INTEGER NOT NULL,
   Endereço TEXT NULL,
-  ChavePix TEXT NOT NULL
+
   
 );
 
 
 
-INSERT INTO Professor VALUES (NULL, 'Wallace Borges', 'wallace.borges@gmail.com', 6198342-5353, 'Pura que partiu 789', '345.678.123-09');
-INSERT INTO Professor VALUES (NULL, 'Bruno Richard', 'bruno.richard@gmail.com', 6199994-3480, 'Nos Cafundé dos Judas 987', '6199994-3480');
-INSERT INTO Professor VALUES (NULL, 'Jurandir Nascimento', 'jurandir.nascimento@gmail.com', 6199655-3188, 'Na baixa da Égua 098', 'jurandir.nascimento@gmail.com';
+INSERT INTO Professor VALUES (NULL, 'Wallace Borges', 'wallace.borges@gmail.com', 6198342-5353, 'Pura que partiu 789' );
+INSERT INTO Professor VALUES (NULL, 'Bruno Richard', 'bruno.richard@gmail.com', 6199994-3480, 'Nos Cafundé dos Judas 987' );
+INSERT INTO Professor VALUES (NULL, 'Jurandir Nascimento', 'jurandir.nascimento@gmail.com', 6199655-3188, 'Na baixa da Égua 098' ;
 
 INSERT INTO Usuário VALUES (NULL, 'Alice Souza', 'alice.souza@gmail.com', 6199356-3941, 'Casa do Cara Alho 123');
 INSERT INTO Usuário VALUES (NULL, 'Bruno Lima', 'bruno.lima@gmail.com', 6199658-1146, 'Rua da Amargura 321');
