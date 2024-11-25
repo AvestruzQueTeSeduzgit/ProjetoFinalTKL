@@ -40,3 +40,6 @@ INSERT INTO Plano VALUES (NULL, 'Plano Simples', 99.00, 'Fatura Paga', '2024-11-
 INSERT INTO Plano VALUES (NULL, 'Plano Modest', 119.90, 'Fatura em Aberto', '2024-11-30');
 INSERT INTO Plano VALUES (NULL, 'Plano Compensator', 159.90, 'Fatura Parcelada', '2024-11-29');
 INSERT INTO Plano VALUES (NULL, 'Plano Modest', 119.90, 'Fatura Atrasada', '2024-11-23');
+
+
+um professor tem um ou varios alunos
